@@ -6,6 +6,6 @@ Ini contoh website sederhana HTML + JS yang bisa submit data langsung ke Google 
 1. Buat Google Spreadsheet baru, sheet bernama `Sheet1` dengan header: `Nama | Email | Pesan | Timestamp`.
 2. Buat Apps Script Web App dengan kode `doPost` (lihat contoh di repo).
 3. Deploy Web App, copy URL.
-4. Ganti `https://script.google.com/macros/s/AKfycbwXog1Y-vUcohLfnGy65K2cZLrVMZkrv_D8P_Se9oJPa4M1RI57Kh87XvK9gPzUTrXfTA/exec` di `index.html` dengan URL Web App.
+4. Ganti `https://script.google.com/macros/s/AKfycbyjKwzUATikFIQEUDmyBSv2Ki6kKRanhU8dbFsxc2qgFmxSKz0XQp10EOav5UjJ3H-iFg/exec` di `index.html` dengan URL Web App.
 5. Upload repo ke GitHub, aktifkan GitHub Pages.
 6. Tes submit form → data masuk ke Google Sheet.
