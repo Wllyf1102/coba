@@ -4,26 +4,19 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Form ke Google Sheets</title>
-<style>
-  body { font-family: Arial; display: flex; justify-content: center; align-items: center; height: 100vh; background:#f7f7f7; }
-  form { background:white; padding:20px; border-radius:8px; box-shadow:0 4px 6px rgba(0,0,0,0.1); width:300px; }
-  input, textarea, button { width:100%; margin-bottom:10px; padding:10px; border-radius:5px; border:1px solid #ddd; }
-  button { background:#007bff; color:white; border:none; cursor:pointer; }
-  button:hover { background:#0056b3; }
-</style>
 </head>
 <body>
 
+<h3>Form ke Google Sheets</h3>
 <form id="myForm">
-  <h3>Form ke Google Sheets</h3>
-  <input type="text" name="nama" placeholder="Nama" required>
-  <input type="email" name="email" placeholder="Email" required>
-  <textarea name="pesan" placeholder="Pesan" required></textarea>
+  <input type="text" name="nama" placeholder="Nama" required><br>
+  <input type="email" name="email" placeholder="Email" required><br>
+  <textarea name="pesan" placeholder="Pesan" required></textarea><br>
   <button type="submit">Kirim</button>
 </form>
 
 <script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbyjKwzUATikFIQEUDmyBSv2Ki6kKRanhU8dbFsxc2qgFmxSKz0XQp10EOav5UjJ3H-iFg/exec"; // Ganti dengan URL Apps Script Web App
+const scriptURL = "https://script.google.com/macros/s/AKfycbz3Jy0klk5aZp0lYNjTOyppI95Fe8inxi3P232nRrZJNDi15Bg3rO1t-6zA4Hhno_Qm/exec"; // ganti dengan URL Web App
 
 document.getElementById("myForm").addEventListener("submit", async function(e){
   e.preventDefault();
