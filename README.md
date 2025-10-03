@@ -1,1 +1,78 @@
-# coba
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirim Data ke Google Sheets</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    form {
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+    input, textarea, button {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="myForm">
+    <h3>Form ke Google Sheets</h3>
+    <input type="text" name="nama" placeholder="Nama" required>
+    <input type="email" name="email" placeholder="Email" required>
+    <textarea name="pesan" placeholder="Pesan" required></textarea>
+    <button type="submit">Kirim</button>
+  </form>
+
+  <script>
+    const scriptURL = "PASTE_URL_WEB_APP_DISINI"; // ganti dengan URL dari Apps Script Web App
+    
+    document.getElementById("myForm").addEventListener("submit", async function(e){
+      e.preventDefault();
+      const data = {
+        nama: this.nama.value,
+        email: this.email.value,
+        pesan: this.pesan.value
+      };
+
+      try {
+        const res = await fetch(scriptURL, {
+          method: "POST",
+          body: JSON.stringify(data)
+        });
+        const text = await res.text();
+        alert("✅ Data tersimpan di Google Sheets!");
+        this.reset();
+      } catch (err) {
+        alert("❌ Gagal menyimpan data!");
+        console.error(err);
+      }
+    });
+  </script>
+
+</body>
+</html>
